@@ -2,7 +2,8 @@
 FROM krmp-d2hub-idock.9rum.cc/goorm/node:16 AS build
 WORKDIR /usr/src/app
 COPY src/package*.json ./
-RUN npm i
+RUN rm -rf node_modules
+RUN npm install
 COPY src/ ./
 RUN npm run build
 
