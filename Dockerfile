@@ -2,7 +2,6 @@
 FROM krmp-d2hub-idock.9rum.cc/goorm/node:16 AS build
 WORKDIR /usr/src/app
 COPY src/package*.json ./
-RUN rm -rf node_modules
 RUN npm install
 RUN npx react-native upgrade
 COPY src/ ./
