@@ -4,7 +4,6 @@ WORKDIR /usr/src/app
 COPY src/package*.json ./
 RUN rm -rf node_modules
 RUN npm install
-RUN npm install npx -g
 RUN npx react-native upgrade
 COPY src/ ./
 RUN npm run build
